@@ -3,8 +3,8 @@ require 'rake/gempackagetask'
 
 PLUGIN = "merb_markaby"
 NAME = "merb_markaby"
-VERSION = "0.0.1"
-AUTHOR = "Eric Watson"
+VERSION = "1.0.12"
+AUTHOR = "Eric Watson, Felipe Talavera, John Lloyd-Jones"
 EMAIL = "wasnotrice@gmail.com"
 HOMEPAGE = "http://merb-plugins.rubyforge.org/merb_markaby/"
 SUMMARY = "Merb plugin that allows the use of Markaby view templates"
@@ -20,7 +20,7 @@ spec = Gem::Specification.new do |s|
   s.author = AUTHOR
   s.email = EMAIL
   s.homepage = HOMEPAGE
-  # s.add_dependency('merb', '>= 0.4.0')
+  s.add_dependency('merb', '>= 1.0.12')
   s.require_path = 'lib'
   s.autorequire = PLUGIN
   s.files = %w(LICENSE README Rakefile TODO) + Dir.glob("{lib,specs}/**/*")

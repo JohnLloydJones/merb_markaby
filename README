@@ -2,3 +2,4 @@ merb_markaby
 ============
 
 A plugin for the Merb framework that allows the use of Markaby view templates.
+Updated to 1.0.12 to fix the change in the compile_template signature in Merb.

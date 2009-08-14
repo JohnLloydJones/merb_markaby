@@ -1,16 +1,16 @@
 module Merb::Template
 
   class Markaby
-    # ==== Parameters
-    # path<String>:: A full path to the template
-    # name<String>:: The name of the method that will be created
-    # mod<Module>:: The module that the compiled method will be placed into
-    def self.compile_template(path, name, mod)
-      path = File.expand_path(path)
-      template = ::Markaby::Template.new(File.read(path))
-      template.def_method(mod, name)
-      name    
-    end
+     # ==== Parameters
+     # io<IO>:: An IO that responds to #path (File or VirtualFile)
+     # name<String>:: The name of the method that will be created
+     # locals<Hash>:: local names
+     # mod<Module>:: The module that the compiled method will be placed into
+     def self.compile_template(io, name, locals, mod)
+       template = ::Markaby::Template.new(io.read)
+       template.def_method(mod, name)
+       name    
+     end
   
     module Mixin    
       # Provides direct acccess to the buffer for this view context
